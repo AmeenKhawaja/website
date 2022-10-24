@@ -1,0 +1,309 @@
+:root {
+  --bg-color: hsl(49 37% 94%);
+  --typewriterSpeed: 3s;
+  --typewriterCharacters: 24;
+  --linkedinBlue: rgb(55, 153, 186);
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  min-height: 120vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: var(--bg-color);
+}
+
+
+h1 {
+  
+  margin: auto;
+  display: grid;
+  place-content: center;
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  position: relative;
+  font-family: "Source Code Pro", monospace;
+  position: relative;
+  width: max-content;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+h1::before {
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+h1::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+.subtitle, .fa, .accordion {
+  color: hsl(0 0% 0% / 0.7);
+  font-size: 2rem;
+  font-weight: 400;
+  color: black;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+    
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 1.5rem;
+  }
+  .subtitle{
+    font-size: 1rem;
+  }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}
+
+
+/* TESTING STUFF */
+
+.logos{
+  display: inline-block;
+  justify-content: center;
+  /* color: var(--linkedinBlue); */
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.fa{
+  color: black;
+  margin: 0.5rem;
+}
+a :hover{
+  color: red;
+  text-decoration: none;
+}
+
+a:visited { 
+  text-decoration: none; 
+}
+
+/* .grow {
+  display: inline-block;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  height: 49px;
+  width: 25%;
+  margin: 5px 1% 5px 1%;
+  float: left;
+  position: relative;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  text-align: center;
+  overflow: hidden;
+  transition: 1.5s;
+}
+.grow:hover {
+  height: 145px;
+  width: 100%;
+}
+.grow2:hover{
+  height: 145px;
+  width: 100%;
+}
+.grow2 {
+  display: inline-block;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  height: 49px;
+  width: 25%;
+  margin: 5px 1% 5px 1%;
+  float: left;
+  position: relative;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  text-align: center;
+  overflow: hidden;
+  transition: 1.5s;
+} */
+
+
+
+.accordion {
+  
+  background-color: rgb(223, 220, 209);
+  color: fff;
+  cursor: pointer;
+  padding: 1.075rem;
+  width: 100%;
+  border: none;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color:rgb(214, 49, 49);
+  transition: 0.5s ease-in-out;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #fff;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+#mobile-content {
+  background-color: #ddd;
+  width: 100%;
+}
+
+.uofl-red {
+  color: #c92027;
+}
+
+.flexbox-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.flexbox-item {
+  /*flex-basis: 33%;*/
+  align-self: flex-end;
+}
+.directions {
+  text-align: center;
+  min-height: 65px;
+}
+  
+.screenshots {
+  text-align: center;
+}
+
+img{
+  float: left;
+  width: auto;
+  height: auto;
+  background-size: cover;
+}
+.img-responsive {
+
+float: left;
+width: 30%;
+padding: 5px;
+
+}
+
+
+/* tech */
+
+.language__img {
+  width: 100%;
+  max-width: 100px;
+  transition: all 0.2s ease-in-out;
+}
+
+.language:hover .language__img {
+  filter: brightness(80%);
+  opacity: 0.8;
+  transform: scale(0.9);
+}
+
+.language {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.language__img--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.language__list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.language__name {
+  position: absolute;
+  bottom: 0;
+  transform: scale(0);
+  font-size: 20px;
+}
+
+.language:hover .language__name {
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+}
